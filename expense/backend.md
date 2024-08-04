@@ -1,5 +1,6 @@
 dnf module disable nodejs -y
 dnf module enable nodejs:20 -y
+dnf install nginx -y
 dnf install nodejs -y
 useradd expense
 mkdir /app 
