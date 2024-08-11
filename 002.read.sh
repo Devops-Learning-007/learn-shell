@@ -20,6 +20,8 @@ stat() {
 
 stat
 
+Action=0
+
 if [ "$Action" = "$?" ] ; then
     echo -e "\e[32m Command ran successfully with exit code $?\e[0m"
 fi
