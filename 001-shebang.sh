@@ -19,5 +19,5 @@ echo -e "\e[46;35mPrinting text with background color\e[0m"
 a=10
 b=1.5
 
-echo -e "Value of a is \e[46;50m$a\e[0m"
-echo -e "Value of b is \e[46;50m$b\e[0m"
+echo -e "Value of a is \e[46;33m$a\e[0m"
+echo -e "Value of b is \e[46;33m$b\e[0m"
