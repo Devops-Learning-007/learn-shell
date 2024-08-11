@@ -37,7 +37,7 @@ echo "Name of the script is $0"
 
 echo "Number of arguments in the code $#"
 
-echo "Print the arguments in the code $*"
+echo "Print the arguments in the code $?"
 
 
 
