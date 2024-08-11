@@ -19,6 +19,14 @@ color() {
     echo -e "\e[35m$*\e[0m"
 }
 
+if [ -f proxy.conf ] ; then
+    color Proxy File Presense
+    stat $?
+else
+    echo -e "\e[31m Proxy file not present, ensure you to suppy\e[0m"
+    exit 1
+fi
+
 color Installing NGINX
 dnf install nginx -y &>> $log
 stat $?
