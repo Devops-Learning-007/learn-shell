@@ -7,7 +7,7 @@ if [ "$ID" -ne 0 ] ; then
 fi
 
 stat () {
-    if [ $? -eq 0 ] ; then
+    if [ $1 -eq 0 ] ; then
         echo -e "/e[32m - Success/e[0m"
     else
         echo -e "/e[31m - Failure/e[0m"   
@@ -15,27 +15,27 @@ stat () {
 }
 
 dnf install nginx -y &>>/tmp/frontend.log
-stat
+stat $?
 
 cp proxy.conf /etc/nginx/default.d/expense.conf &>>/tmp/frontend.log
-stat
+stat $?
 
 systemctl enable nginx &>>/tmp/frontend.log
-stat
+stat $?
 
 rm -rf /usr/share/nginx/html/* &>>/tmp/frontend.log
-stat
+stat $?
 
 curl -o /tmp/frontend.zip https://expense-web-app.s3.amazonaws.com/frontend.zip &>>/tmp/frontend.log
-stat
+stat $?
 
 cd /usr/share/nginx/html &>>/tmp/frontend.log
-stat
+stat $?
 
 unzip /tmp/frontend.zip &>>/tmp/frontend.log
-stat
+stat $?
 
 systemctl restart nginx &>>/tmp/frontend.log
-stat
+stat $?
 
 echo "**frontend installation completed**"
