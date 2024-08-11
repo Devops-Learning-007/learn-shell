@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ID=$(id -u)
+log="/tmp/frontend.log"
 
 if [ "$ID" -ne 0 ] ; then
     echo -e "\e[31m Script is expected to be executed as root user or with sudo bash $0\e[0m"
@@ -19,32 +20,32 @@ color() {
 }
 
 color Installing NGINX
-dnf install nginx -y &>>/tmp/frontend.log
+dnf install nginx -y &>> $log
 stat $?
 
 color Copying Proxy
-cp proxy.conf /etc/nginx/default.d/expense.conf &>>/tmp/frontend.log
+cp proxy.conf /etc/nginx/default.d/expense.conf &>> $log
 stat $?
 
 color Enabling NGNIX
-systemctl enable nginx &>>/tmp/frontend.log
+systemctl enable nginx &>> $log
 stat $?
 
 color Cleanup
-rm -rf /usr/share/nginx/html/* &>>/tmp/frontend.log
+rm -rf /usr/share/nginx/html/* &>> $log
 stat $?
 
 color Downloading Frontend
-curl -o /tmp/frontend.zip https://expense-web-app.s3.amazonaws.com/frontend.zip &>>/tmp/frontend.log
-cd /usr/share/nginx/html &>>/tmp/frontend.log
+curl -o /tmp/frontend.zip https://expense-web-app.s3.amazonaws.com/frontend.zip &>> $log
+cd /usr/share/nginx/html &>> $log
 stat $?
 
 color Extracting Frontend
-unzip /tmp/frontend.zip &>>/tmp/frontend.log
+unzip /tmp/frontend.zip &>> $log
 stat $?
 
 color Starting Frontend
-systemctl restart nginx &>>/tmp/frontend.log
+systemctl restart nginx &>> $log
 stat $?
 
 echo "**frontend installation completed**"
