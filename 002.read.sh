@@ -15,10 +15,12 @@ Action=$1
 stat() {
     echo "Today date is $(date)"
     echo "load average on the system is $(uptime)"
-    echo "run level of the system is $(runlel)"
+    echo "run level of the system is $(runlevel)"
 }
 
 stat
+
+rulev
 
 Action=0
 
