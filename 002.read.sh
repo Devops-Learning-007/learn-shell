@@ -22,9 +22,8 @@ stat
 
 rulev
 
-Action=0
 
-if [ "$Action" = "$?" ] ; then
+if [ "$?" = "0" ] ; then
     echo -e "\e[32m Command ran successfully with exit code $?\e[0m"
 else
     echo -e "\e[35m Command not executed successfully with exit code $?\e[0m"
