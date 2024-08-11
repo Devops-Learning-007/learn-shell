@@ -25,3 +25,8 @@ echo -e "Value of b is \e[46;33m$b\e[0m"
 DATE=$(date +%F)
 
 echo "Today date is $DATE"
+
+User=$1
+Department=$2
+
+echo "Script Executed by $1 belongs to department $2"
