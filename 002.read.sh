@@ -25,7 +25,7 @@ ruevel
 
 if [ "$?" = "0" ] ; then
     echo -e "\e[32m Command ran successfully with exit code $?\e[0m"
-elif [ "$?" = "127" ] ; then
+elif [ "$?" = "1" ] ; then
     echo -e "\e[35m Command not executed successfully with exit code $?\e[0m"
 else 
     echo -e "no command executed"
