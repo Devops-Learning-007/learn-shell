@@ -35,6 +35,9 @@ echo "Script Executed by $(whoami) belongs to department $2"
 
 echo "Name of the script is $0"
 
-echo "Print the arguments in the code $#"
+echo "Number of arguments in the code $#"
+
+echo "Print the arguments in the code $@"
+
 
 
