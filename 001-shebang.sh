@@ -9,3 +9,5 @@ echo Line3
 echo -e "Line4\nLine5"
 
 echo -e "Devops\tAWS\tBatch\t58"
+
+echo -e "\e[35m this shows Magenta color \e[0m"
