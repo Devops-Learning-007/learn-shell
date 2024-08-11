@@ -30,3 +30,7 @@ User=$1
 Department=$2
 
 echo "Script Executed by $1 belongs to department $2"
+
+echo "Script Executed by $(whoami) belongs to department $2"
+
+
