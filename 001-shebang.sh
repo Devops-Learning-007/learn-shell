@@ -33,4 +33,6 @@ echo "Script Executed by $1 belongs to department $2"
 
 echo "Script Executed by $(whoami) belongs to department $2"
 
+echo "Name of the script is $0"
+
 
