@@ -15,7 +15,7 @@ Action=$1
 stat() {
     echo "Today date is $(date)"
     echo "load average on the system is $(uptime)"
-    echo "run level of the system is $(runlevel)"
+    echo "run level of the system is $(runlel)"
 }
 
 stat
@@ -24,6 +24,8 @@ Action=0
 
 if [ "$Action" = "$?" ] ; then
     echo -e "\e[32m Command ran successfully with exit code $?\e[0m"
+else
+    echo -e "\e[35m Command not executed successfully with exit code $?\e[0m"
 fi
 
 
