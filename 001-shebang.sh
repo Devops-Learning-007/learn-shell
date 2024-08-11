@@ -22,6 +22,6 @@ b=1.5
 echo -e "Value of a is \e[46;33m$a\e[0m"
 echo -e "Value of b is \e[46;33m$b\e[0m"
 
-DATE=${date +%F}
+DATE=$(date +%F)
 
 echo "Today date is $DATE"
