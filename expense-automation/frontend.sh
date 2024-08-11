@@ -14,27 +14,36 @@ stat() {
     fi
 }
 
+color() {
+    echo -e "\e[35m$*\e[0m"
+}
+
+color Installing NGINX
 dnf install nginx -y &>>/tmp/frontend.log
 stat $?
 
+color Copying Proxy
 cp proxy.conf /etc/nginx/default.d/expense.conf &>>/tmp/frontend.log
 stat $?
 
+color Enabling NGNIX
 systemctl enable nginx &>>/tmp/frontend.log
 stat $?
 
+color Cleanup
 rm -rf /usr/share/nginx/html/* &>>/tmp/frontend.log
 stat $?
 
+color Downloading Frontend
 curl -o /tmp/frontend.zip https://expense-web-app.s3.amazonaws.com/frontend.zip &>>/tmp/frontend.log
-stat $?
-
 cd /usr/share/nginx/html &>>/tmp/frontend.log
 stat $?
 
+color Extracting Frontend
 unzip /tmp/frontend.zip &>>/tmp/frontend.log
 stat $?
 
+color Starting Frontend
 systemctl restart nginx &>>/tmp/frontend.log
 stat $?
 
