@@ -13,7 +13,7 @@ echo "Sum of the A + B = $((A+B))"
 Action=$1
 
 stat() {
-    echo "Today date is $(date +%F)"
+    echo "Today date is $(date)"
     echo "load average on the system is $(uptime)"
     echo "run level of the system is $(runlevel)"
 }
