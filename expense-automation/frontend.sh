@@ -6,7 +6,7 @@ if [ "$ID" -ne 0 ] ; then
     echo -e "\e[31m Script is expected to be executed as root user or with sudo bash $0\e[0m"
 fi
 
-stat () {
+stat() {
     if [ $1 -eq 0 ] ; then
         echo -e "/e[32m - Success/e[0m"
     else
