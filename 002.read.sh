@@ -20,7 +20,7 @@ stat() {
 
 stat
 
-ruevel
+runlevel
 
 
 if [ "$?" = "0" ] ; then
